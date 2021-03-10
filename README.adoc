@@ -1,0 +1,11 @@
+Repository for CSE482 lab tasks
+=========================
+:Author: Asaduzzaman Noor
+:Email: mail-me@asaduzzaman-noor.com
+
+== CSE482 Lab Task
+This repository holds every lab tasks I have done for Internet and Web Technology (CSE482)
+course.
+
+Tasks are categorised in folders on their according to class number.
+
