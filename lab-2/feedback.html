@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Feedback Form</title>
+	<link rel="stylesheet" href="feedback.css" type="text/css" media="all">
+    </head>
+    <body>
+	<nav>
+	    <ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Categories</a></li>
+		<li><a href="#">About Us</a></li>
+		<li><a href="#">Shop Locations</a></li>
+	    </ul>
+	</nav>
+	<section>
+	    <h1>Shop Title</h1>
+	    <form action="feedback_submit" method="get" accept-charset="utf-8">
+		<fieldset id="(?1:_:\LFeedback\E)" class="">
+		    <legend>Feedback</legend>
+		    <table style="width:80%;margin:auto">
+			<tr>
+			    <td><label for="cname">Name:</label></td>
+			    <td><input style="width:100%" type="text" placeholder="Full Name" name="cname" id="cname" required></td>
+			</tr>
+			<tr>
+			    <td><label for="cmail" class"flabel">Email:</label></td>
+			    <td><input type="text" placeholder="id@domain.xyz" name="cmail" id="cmail" required></td>
+			</tr>
+			<tr>
+			    <td><label for="caddr" class"flabel">Address:</label></td>
+			    <td><input type="text" placeholder="Your address" name="caddr" id="caddr" required></td>
+			</tr>
+			<tr>
+			    <td>How satisfied are you with our service?</td>
+			    <td>
+				<input type="radio" name="csatisfy" id="csatisfy" value="+2">
+				<label for=>Very Satisfied</label><br>
+				<input type="radio" name="csatisfy" id="csatisfy" value="+1">
+				<label for=>Satisfied</label><br>
+				<input type="radio" name="csatisfy" id="csatisfy" value="0">
+				<label for=>It's Okay</label><br>
+				<input type="radio" name="csatisfy" id="csatisfy" value="-1">
+				<label for=>Disappointed</label><br>
+				<input type="radio" name="csatisfy" id="csatisfy" value="-2">
+				<label for=>Very Disappointed</label>
+			    </td>
+			</tr>
+			<tr>
+			    <td>Where can we improve?</td>
+			    <td>
+				<input type="checkbox" id="improve" name="improve" value="Inventory">
+				<label for="improve">Item collection</label><br>
+				<input type="checkbox" id="improve" name="improve" value="Delivery">
+				<label for="improve">Delivery System</label><br>
+				<input type="checkbox" id="improve" name="improve" value="Payment">
+				<label for="improve">Payment Methods</label>
+			    </td>
+			</tr>
+			<tr>
+			    <td><label for="comment">Comments:</label></td>
+			    <td><textarea id="comment" name="comment"></textarea></td>
+			</tr>
+		    </table>
+		    <button type="button" onclick="alert(`I'm useless`)">Submit</button>
+		</fieldset>
+	    </form>
+	</section>
+	<address>
+	    <h3>Address & contact</h3>
+	    <strong>Head Office:</strong> 934 Lafayette Street Middle River, MD 21220<br>
+	    For any query, send a mail to <a href="mailto:john.doe@nowhere.xyz">jonh.doe@nowhere.xyz</a>
+	</address>
+	<footer>
+	    &copy;&nbsp;Asaduzzaman Noor - 163 1231 042
+	</footer>
+    </body>
+</html>

@@ -1,0 +1,170 @@
+:root {
+    --bg-colour: #333;
+    --text-colour: #eee;
+    --link-colour: cyan;
+}
+
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
+}
+
+nav {
+    background-color: #000;
+}
+
+nav > ul {
+    height: 5vh;
+    list-style: none;
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav li {
+    height: 100%;
+    width: 24%;
+    display: table;
+    text-align: center;
+}
+
+a {
+    color: var(--link-colour);
+}
+
+nav a {
+    text-decoration: none;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+nav li:hover {
+    background-color: #555;
+}
+
+section {
+    height: 79vh;
+    width: 100vw;
+}
+
+section > h1 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+form {
+    width: 80%;
+    margin: auto;
+}
+
+fieldset {
+    padding: 3rem;
+    display: grid;
+    /* place-self: center; */
+    /* place-items: center; */
+    place-content: center;
+}
+
+legend {
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #fff;
+    padding: 10px;
+}
+
+input[type="text"] {
+    background: transparent;
+    border: none;
+}
+
+::placeholder {
+    color: #ccc;
+}
+
+textarea {
+    /* background-color: transparent; */
+    border: none;
+    width: 500px;
+}
+
+button {
+    margin: 30px auto 0 auto;
+    width: 300px;
+}
+
+address {
+    height: 12vh;
+    text-align: center;
+    background-color: #444;
+    padding: 1rem;
+}
+
+address > h3 {
+    font-size: 1.3em;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+footer {
+    height: 1vh;
+    min-height: 1.2rem;
+    text-align: center;
+}
+
+@media all and (max-width:700px) {
+    body {
+	height: 100%;
+	width: 100%;
+    }
+
+    nav > ul {
+	height: 10em;
+	flex-direction: column;
+    }
+
+    nav li {
+	height: auto;
+	width: 100%;
+	display: block;
+	text-align: center;
+	padding: 8px;
+    }
+
+    nav a {
+	text-decoration: none;
+	display: inline;
+    }
+
+    nav li:hover {
+	background-color: #555;
+    }
+
+    section {
+	height: auto;
+    }
+
+    textarea {
+	width: auto;
+    }
+
+    address {
+	height: auto;
+	width: 100%;
+	padding: 2rem;
+    }
+}
