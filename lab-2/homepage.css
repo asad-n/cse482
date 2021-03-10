@@ -1,0 +1,164 @@
+:root {
+    --bg-colour: #333;
+    --text-colour: #eee;
+    --link-colour: cyan;
+}
+
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
+}
+
+nav {
+    background-color: #000;
+}
+
+nav > ul {
+    height: 5vh;
+    list-style: none;
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav li {
+    height: 100%;
+    width: 24%;
+    display: table;
+    text-align: center;
+}
+
+a {
+    color: var(--link-colour);
+}
+
+nav a {
+    text-decoration: none;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+nav li:hover {
+    background-color: #555;
+}
+
+section {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section > h1 {
+    margin: 2rem auto;
+    font-size: 3em;
+}
+
+section > p {
+    margin: 1rem auto;
+    padding: 1rem 3rem;
+    font-size: 0.9rem;
+}
+
+.item-container {
+    width: 100%;
+    flex-grow: 1;
+    background-color: #393939;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-container > h3 {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+}
+
+.items {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.item {
+    margin: 3rem 1rem;
+    padding: 2rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: grid;
+    gap: 15px;
+    place-items: center;
+}
+
+address {
+    height: 12vh;
+    text-align: center;
+    background-color: #444;
+    padding: 1rem;
+}
+
+address > h3 {
+    font-size: 1.3em;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+footer {
+    height: 1vh;
+    min-height: 1.2rem;
+    text-align: center;
+}
+
+@media all and (max-width:600px) {
+    body {
+	height: 100%;
+	width: 100%;
+    }
+
+    nav > ul {
+	height: 10em;
+	flex-direction: column;
+    }
+
+    nav li {
+	height: auto;
+	width: 100%;
+	display: block;
+	text-align: center;
+	padding: 8px;
+    }
+
+    nav a {
+	text-decoration: none;
+	display: inline;
+    }
+
+    nav li:hover {
+	background-color: #555;
+    }
+
+    section {
+	height: auto;
+    }
+
+    .items {
+	flex-direction: column;
+    }
+
+    address {
+	height: auto;
+	width: 100%;
+	padding: 2rem;
+    }
+}
