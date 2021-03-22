@@ -88,6 +88,7 @@ td {
 }
 
 input[type="text"] {
+    color: var(--text-colour);
     background: transparent;
     border: none;
 }
