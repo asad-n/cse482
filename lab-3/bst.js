@@ -71,9 +71,20 @@ class BST {
 	return false
     }
 
-    // print_pre_order() {
+    print_pre_order() {
+	if(this.root.val === null)
+	    return `Empty tree`
 
-    // }
+	this.print_pre_order_helper(this.root)
+    }
+
+    print_pre_order_helper(current) {
+	if(current !== null) {
+	    console.log(current.val)
+	    this.print_pre_order_helper(current.left)
+	    this.print_pre_order_helper(current.right)
+	}
+    }
     
     // print_post_order() {
 
