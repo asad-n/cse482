@@ -54,14 +54,27 @@ class BST {
 	return visited
     }
 
-    // search(val) {
+    search(val) {
+	if(this.root.val === null)
+	    return `Empty tree`
 
-    // }
-    
+	let current = this.root
+
+	while(current !== null) {
+	    if(val === current.val)
+		return true
+	    else if(val < current.val)
+		current = current.left
+	    else
+		current = current.right
+	}
+	return false
+    }
+
     // print_pre_order() {
 
     // }
-
+    
     // print_post_order() {
 
     // }
