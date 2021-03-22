@@ -54,6 +54,7 @@ class BST {
 	return visited
     }
 
+// TODAY'S TASK STARTS
     search(val) {
 	if(this.root.val === null)
 	    return `Empty tree`
@@ -100,4 +101,5 @@ class BST {
 	    console.log(current.val)
 	}
     }
+// TASK ENDS
 }
