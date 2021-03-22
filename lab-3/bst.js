@@ -86,7 +86,18 @@ class BST {
 	}
     }
     
-    // print_post_order() {
+    print_post_order() {
+	if(this.root.val === null)
+	    return `Empty tree`
 
-    // }
+	this.print_post_order_helper(this.root)
+    }
+
+    print_post_order_helper(current) {
+	if(current !== null) {
+	    this.print_post_order_helper(current.left)
+	    this.print_post_order_helper(current.right)
+	    console.log(current.val)
+	}
+    }
 }
