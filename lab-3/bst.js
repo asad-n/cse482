@@ -102,4 +102,38 @@ class BST {
 	}
     }
 // TASK ENDS
+
+// BONUS
+    delete_node(key) {
+	return this.delete_node_helper(this.root, key)
+    }
+
+    delete_node_helper(current, key) {
+	if(current === null) return false
+
+	if(key < current.val) {
+	    current.left = this.delete_node_helper(current.left, key)
+	    return current
+	} else if(key > current.val) {
+	    current.right = this.delete_node_helper(current.right, key)
+	    return current
+	} else {
+	    if(current.left === null && current.right === null) {
+		current = null;
+		return current
+	    }
+
+	    if(current.left === null) return current.right
+	    if(current.right === null) return current.left
+	    
+	    let curr_node = current.right
+	    while(curr_node.left !== null) {
+		curr_node = curr_node.left
+	    }
+	    current.val = curr_node.val
+	    current.right = this.delete_node_helper(current.right, curr_node.val)
+
+	    return current
+	}
+    }
 }
