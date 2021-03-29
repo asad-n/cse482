@@ -1,5 +1,0 @@
-# Repository for CSE482 lab tasks
-This repository holds every lab tasks I have done for Internet and Web Technology (CSE482)
-course.
-
-Tasks are categorised in folders on their according to class number.
