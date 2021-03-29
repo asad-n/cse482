@@ -113,10 +113,10 @@ class BST {
 
 	if(key < current.val) {
 	    current.left = this.delete_node_helper(current.left, key)
-	    // return current
+	    return current
 	} else if(key > current.val) {
 	    current.right = this.delete_node_helper(current.right, key)
-	    // return current
+	    return current
 	} else {
 	    if(current.left === null && current.right === null) {
 		current = null;
