@@ -1,0 +1,83 @@
+:root {
+    --bg-colour: #333;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-colour);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.theform {
+    width: 80%;
+    border: 2px solid red;
+    padding: 3rem;
+}
+
+.theform > form {
+    width: 100%;
+    text-align: center;
+}
+
+.theform > h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 2em;
+}
+
+.block {
+    width: 80%;
+    margin: 1em auto;
+}
+
+.block > input[type="text"],
+.block > input[type="password"] {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: center;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+legend {
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.block--element {
+    margin: 1em auto;
+    text-align: center;
+}
+
+.block--element > label {
+    margin-right: 2em;
+}
+
+.block--element > select {
+    width: 80%;
+}
+
+.btn-submit {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* .block > select { */
+/*     width: 80%; */
+/*     margin: 1em auto; */
+/* } */

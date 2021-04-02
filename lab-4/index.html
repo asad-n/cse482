@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <meta charset="UTF-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	    <title>Form Validation</title>
+	    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+	    <script src="script.js" type="text/javascript" defer></script>
+    </head>
+    <body>
+	<section class="theform">
+	    <h3>Form Validation</h3>
+	    <form>
+		<div class="block">
+		    <input type="text" name="fullname" id="fullname" placeholder="Name" required>
+		</div>
+		<div class="block">
+		    <input type="text" name="username" id="username" placeholder="Username" required>
+		</div>
+		<div class="block">
+		    <input type="password" name="password" id="password" placeholder="Password" required>
+		</div>
+		<div class="block">
+		    <input type="password" id="repass" placeholder="Re-type password">
+		</div>
+		<fieldset class="block">
+		    <legend>Gender</legend>
+		    <div class="block--element">
+			<input type="radio" name="gender" id="male" value="male" required>
+			<label for="male">Male</label>
+			<input type="radio" name="gender" id="female" value="female">
+			<label for="female">Female</label>
+			<input type="radio" name="gender" id="other" value="other">
+			<label for="other">Other</label>
+		    <div>
+		</fieldset>
+		<fieldset class="block">
+		    <legend>Programming Skills</legend>
+		    <div class="block--element">
+			<input type="checkbox" name="programming-skill" id="java" value="java">
+			<label for="java">Java</label>
+			<input type="checkbox" name="programming-skill" id="android" value="android">
+			<label for="android">Android</label>
+			<input type="checkbox" name="programming-skill" id="ruby" value="ruby">
+			<label for="ruby">Ruby</label>
+			<input type="checkbox" name="programming-skill" id="dotnet" value="dotnet">
+			<label for="dotnet">.Net</label>
+		    <div>
+		</fieldset>
+		<div class="block">
+		    <input type="text" name="contact" id="contact" placeholder="Contact no." required>
+		</div>
+		<div class="block">
+		    <input type="text" name="email" id="email" placeholder="Email">
+		</div>
+		<fieldset class="block">
+		    <legend>University</legend>
+		    <div class="block--element">
+			<select name="university" id="university">
+			    <option value="">Select..</option>
+			    <option value="nsu">North South University</option>
+			    <option value="ewu">East West University</option>
+			    <option value="iub">Independent University</option>
+			    <option value="aiub">American International University - Bangladesh</option>
+			</select>
+		    </div>
+		</fieldset>
+		<button class="btn-submit">Submit</button>
+	    </form>
+	</section>
+    </body>
+</html>
