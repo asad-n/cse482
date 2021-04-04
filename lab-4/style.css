@@ -2,8 +2,9 @@
     --bg-gradient-desk: linear-gradient(315deg, #537895 0%, #09203f 74%);
     --bg-gradient-phn: linear-gradient(to bottom, #21303b, #09203f);
     --text-colour: #999;
+    --input-colour: #fff;
     --border: 1px solid #999;
-    --label-colour: #ff6700;
+    --label-colour: #00bfff;
 }
 
 *, *::before, *::after {
@@ -14,6 +15,7 @@
 
 body {
     background: var(--bg-gradient-desk);
+    /* font-family: Arial, Helvetica, sans-serif; */
     color: var(--text-colour);
     height: 100vh;
     width: 100vw;
@@ -58,12 +60,12 @@ body {
 
 .block {
     width: 80%;
-    margin: 1em auto;
+    margin: 1.5em auto;
     position: relative;
 }
 
 .block__textfield {
-    color: #fff;
+    color: var(--input-colour);
     width: 100%;
     height: 100%;
     padding: 1em;
@@ -75,6 +77,42 @@ body {
 
 .block__textfield::placeholder {
     color: var(--text-colour);
+}
+
+.block__indicator {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #aaa;
+    border-radius: 50%;
+}
+
+.block__indicator--red {
+    background-color: #f00;
+    box-shadow: 0 0 5px #f00,
+                0 0 10px #f00,
+		0 0 20px #f00,
+		0 0 40px #f00;
+}
+
+.block__indicator--green {
+    background-color: #0f0;
+    box-shadow: 0 0 5px #0f0,
+                0 0 10px #0f0,
+		0 0 20px #0f0,
+		0 0 40px #0f0;
+}
+
+.block__error {
+    position: absolute;
+    left: 50%;
+    bottom: -1.4em;
+    transform: translateX(-50%);
+    font-size: 0.75em;
+    color: rgb(255,50,50);
 }
 
 .block > label {
@@ -98,6 +136,7 @@ body {
     transform: translate(0, -50%);
 }
 
+
 fieldset {
     border: var(--border);
     border-radius: 1rem;
@@ -115,8 +154,12 @@ legend {
 }
 
 .block__element > label {
-    margin-right: 2em;
-    color: #fff;
+    color: var(--input-colour);
+}
+
+.block__element > label + input[type="checkbox"],
+.block__element > label + input[type="radio"] {
+    margin-left: 3em;
 }
 
 .block__element > select {
@@ -129,12 +172,12 @@ legend {
     width: 60%;
     margin: 0 auto;
     padding: 0.5em;
-    background-color: red;
+    background-color: var(--label-colour);
     border: none;
     border-radius: 0.5rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 767px) {
     body {
 	width: 100%;
 	height: auto;
@@ -146,13 +189,13 @@ legend {
 	min-width: 360px;
     }
 
-    .block__element {
-	display: flex;
-	flex-direction: column;
+    .block__element > label + input[type="checkbox"],
+    .block__element > label + input[type="radio"] {
+	margin: auto;
     }
 
     .block__element > label {
-	margin-left: 10%;
-	margin-bottom: 1em;
+	display: block;
+	margin: 0 auto 1.5em auto;
     }
 }
