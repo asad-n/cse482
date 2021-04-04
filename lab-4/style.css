@@ -1,5 +1,9 @@
 :root {
-    --bg-colour: #333;
+    --bg-gradient-desk: linear-gradient(315deg, #537895 0%, #09203f 74%);
+    --bg-gradient-phn: linear-gradient(to bottom, #21303b, #09203f);
+    --text-colour: #999;
+    --border: 1px solid #999;
+    --label-colour: #ff6700;
 }
 
 *, *::before, *::after {
@@ -9,7 +13,8 @@
 }
 
 body {
-    background-color: var(--bg-colour);
+    background: var(--bg-gradient-desk);
+    color: var(--text-colour);
     height: 100vh;
     width: 100vw;
     display: grid;
@@ -17,9 +22,13 @@ body {
 }
 
 .theform {
-    width: 80%;
-    border: 2px solid red;
+    width: 40%;
+    min-width: 600px;
+    background-color: rgba(255,255,255,0.1);
     padding: 3rem;
+    border-radius: 2rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.3);
 }
 
 .theform > form {
@@ -28,56 +37,122 @@ body {
 }
 
 .theform > h3 {
+    color: #999;
     text-align: center;
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 2rem;
+    font-weight: 900;
     margin-bottom: 2em;
+    position: relative;
+}
+
+.theform > h3::after {
+    content: '';
+    background-color: #fff;
+    width: 70%;
+    height: 4px;
+    position: absolute;
+    bottom: -0.5em;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .block {
     width: 80%;
     margin: 1em auto;
+    position: relative;
 }
 
-.block > input[type="text"],
-.block > input[type="password"] {
+.block__textfield {
+    color: #fff;
     width: 100%;
     height: 100%;
     padding: 1em;
-    border: 1px solid black;
-    border-radius: 15px;
+    background: none;
+    border: var(--border);
+    border-radius: 1rem;
     text-align: center;
 }
 
+.block__textfield::placeholder {
+    color: var(--text-colour);
+}
+
+.block > label {
+    color: var(--label-colour);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.block__textfield:placeholder-shown ~ label {
+    visibility: hidden;
+}
+
+.block__textfield:not(:placeholder-shown) ~ label {
+    visibility: visible;
+    top: 50%;
+    left: 20px;
+    transform: translate(0, -50%);
+}
+
 fieldset {
-    border: 1px solid #ccc;
-    border-radius: 15px;
+    border: var(--border);
+    border-radius: 1rem;
 }
 
 legend {
+    color: var(--label-colour);
     margin: 0 auto;
     padding: 0 1em;
 }
 
-.block--element {
+.block__element {
     margin: 1em auto;
     text-align: center;
 }
 
-.block--element > label {
+.block__element > label {
     margin-right: 2em;
+    color: #fff;
 }
 
-.block--element > select {
+.block__element > select {
+    margin: 0 auto;
     width: 80%;
+    padding: 0.5em;
 }
 
 .btn-submit {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
+    padding: 0.5em;
+    background-color: red;
+    border: none;
+    border-radius: 0.5rem;
 }
 
-/* .block > select { */
-/*     width: 80%; */
-/*     margin: 1em auto; */
-/* } */
+@media (max-width: 700px) {
+    body {
+	width: 100%;
+	height: auto;
+	background: var(--bg-gradient-phn);
+    }
+
+    .theform {
+	width: 90%;
+	min-width: 360px;
+    }
+
+    .block__element {
+	display: flex;
+	flex-direction: column;
+    }
+
+    .block__element > label {
+	margin-left: 10%;
+	margin-bottom: 1em;
+    }
+}

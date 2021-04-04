@@ -12,20 +12,24 @@
 	    <h3>Form Validation</h3>
 	    <form>
 		<div class="block">
-		    <input type="text" name="fullname" id="fullname" placeholder="Name" required>
+		    <input class="block__textfield"  placeholder="Full Name" type="text" name="fullname" id="fullname" required>
+		    <label for="fullname">Name :</label>
 		</div>
 		<div class="block">
-		    <input type="text" name="username" id="username" placeholder="Username" required>
+		    <input class="block__textfield" placeholder="username" type="text" name="username" id="username" pattern="^[\S]+$" required>
+		    <label for="username">Username :</label>
 		</div>
 		<div class="block">
-		    <input type="password" name="password" id="password" placeholder="Password" required>
+		    <input class="block__textfield"  placeholder="Password" type="password" name="password" id="password" pattern="^\S{8,32}$" required>
+		    <label for="password">Password :</label>
 		</div>
 		<div class="block">
-		    <input type="password" id="repass" placeholder="Re-type password">
+		    <input class="block__textfield"  placeholder="Re-type password" type="password" id="repass">
+		    <label for="repass">Re-type password :</label>
 		</div>
 		<fieldset class="block">
 		    <legend>Gender</legend>
-		    <div class="block--element">
+		    <div class="block__element">
 			<input type="radio" name="gender" id="male" value="male" required>
 			<label for="male">Male</label>
 			<input type="radio" name="gender" id="female" value="female">
@@ -36,7 +40,7 @@
 		</fieldset>
 		<fieldset class="block">
 		    <legend>Programming Skills</legend>
-		    <div class="block--element">
+		    <div class="block__element">
 			<input type="checkbox" name="programming-skill" id="java" value="java">
 			<label for="java">Java</label>
 			<input type="checkbox" name="programming-skill" id="android" value="android">
@@ -48,14 +52,16 @@
 		    <div>
 		</fieldset>
 		<div class="block">
-		    <input type="text" name="contact" id="contact" placeholder="Contact no." required>
+		    <input placeholder="Mobile No. (01XXXXXXXXX)" class="block__textfield"  type="text" name="contact" id="contact" pattern="^\d{11}$">
+		    <label for="contact">Contact No. :</label>
 		</div>
 		<div class="block">
-		    <input type="text" name="email" id="email" placeholder="Email">
+		    <input class="block__textfield"  placeholder="Email (someone@example.com)" type="text" name="email" id="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+		    <label for="email">Email :</label>
 		</div>
 		<fieldset class="block">
 		    <legend>University</legend>
-		    <div class="block--element">
+		    <div class="block__element">
 			<select name="university" id="university">
 			    <option value="">Select..</option>
 			    <option value="nsu">North South University</option>
