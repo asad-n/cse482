@@ -9,26 +9,34 @@
     </head>
     <body>
 	<section class="theform">
-	    <h3>Form Validation</h3>
-	    <form>
+	<h3>Form Validation</h3>
+	    <form id="form">
 		<div class="block">
+		    <span class="block__indicator"></span>
 		    <input class="block__textfield"  placeholder="Full Name" type="text" name="fullname" id="fullname" required>
 		    <label for="fullname">Name :</label>
+		    <span class="block__error">Hello</span>
 		</div>
 		<div class="block">
+		    <span class="block__indicator"></span>
 		    <input class="block__textfield" placeholder="username" type="text" name="username" id="username" pattern="^[\S]+$" required>
 		    <label for="username">Username :</label>
+		    <span class="block__error">Hello</span>
 		</div>
 		<div class="block">
-		    <input class="block__textfield"  placeholder="Password" type="password" name="password" id="password" pattern="^\S{8,32}$" required>
+		    <span class="block__indicator"></span>
+		    <input class="block__textfield" placeholder="Password" type="password" name="password" id="password" pattern="^\S{8,32}$" required>
 		    <label for="password">Password :</label>
+		    <span class="block__error">Hello</span>
 		</div>
 		<div class="block">
-		    <input class="block__textfield"  placeholder="Re-type password" type="password" id="repass">
+		    <span class="block__indicator"></span>
+		    <input class="block__textfield" placeholder="Re-type password" type="password" id="repass" required>
 		    <label for="repass">Re-type password :</label>
+		    <span class="block__error">Hello</span>
 		</div>
 		<fieldset class="block">
-		    <legend>Gender</legend>
+		    <legend>Gender <span style="font-size:xx-small">(required)</span></legend>
 		    <div class="block__element">
 			<input type="radio" name="gender" id="male" value="male" required>
 			<label for="male">Male</label>
@@ -37,6 +45,7 @@
 			<input type="radio" name="gender" id="other" value="other">
 			<label for="other">Other</label>
 		    <div>
+		    <span class="block__error">Hello</span>
 		</fieldset>
 		<fieldset class="block">
 		    <legend>Programming Skills</legend>
@@ -53,11 +62,13 @@
 		</fieldset>
 		<div class="block">
 		    <input placeholder="Mobile No. (01XXXXXXXXX)" class="block__textfield"  type="text" name="contact" id="contact" pattern="^\d{11}$">
-		    <label for="contact">Contact No. :</label>
+		    <label for="contact">Mobile No. :</label>
+		    <span class="block__error">Hello</span>
 		</div>
 		<div class="block">
 		    <input class="block__textfield"  placeholder="Email (someone@example.com)" type="text" name="email" id="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
 		    <label for="email">Email :</label>
+		    <span class="block__error">Hello</span>
 		</div>
 		<fieldset class="block">
 		    <legend>University</legend>
