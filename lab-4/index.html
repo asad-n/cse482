@@ -62,7 +62,7 @@
 		</fieldset>
 		<div class="block">
 		    <span class="block__indicator"></span>
-		    <input placeholder="Mobile Number" class="block__textfield"  type="text" name="contact" id="contact" pattern="^\d{11}$" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+		    <input placeholder="Mobile Number" class="block__textfield"  type="text" name="contact" id="contact" pattern="^01\d{9}$" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 		    <label for="contact">Mobile No. :</label>
 		    <span style="visibility:hidden" class="block__error"></span>
 		</div>

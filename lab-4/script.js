@@ -9,7 +9,7 @@ const fullname = document.getElementById(`fullname`),
       fullname_regexp = /^[a-z .'-]+$/i,
       username_regexp = /^[\S]+$/,
       password_regexp = /^\S{8,32}$/,
-      mobile_regexp   = /^\d{11}$/,
+      mobile_regexp   = /^01\d{9}$/,
       email_regexp    = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 
 function indicator_status(element, pattern) {
