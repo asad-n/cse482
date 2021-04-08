@@ -1,6 +1,6 @@
 :root {
     /* --bg-gradient-desk: repeating-linear-gradient(315deg, #4C516D 20%, #09203f 55%); */
-    --bg-gradient-desk: linear-gradient(315deg, hsl(205,15%,20%) 33%, hsl(200,28%,18%) 0 67%, hsl(205,15%,20%) 0 100%);
+    --bg-gradient-desk: linear-gradient(315deg, hsl(200,35%,25%) 33%, hsl(205,15%,20%) 0 67%, hsl(200,35%,25%) 0 100%);
     --bg-gradient-phn: linear-gradient(to bottom, #21303b, #09203f);
     --text-colour: #999;
     --input-colour: #fff;
