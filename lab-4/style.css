@@ -1,6 +1,5 @@
 :root {
     --bg-gradient-desk: linear-gradient(315deg, #537895 0%, #09203f 74%);
-    /* --bg-gradient-desk: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
     --bg-gradient-phn: linear-gradient(to bottom, #21303b, #09203f);
     --text-colour: #999;
     --input-colour: #fff;
@@ -31,7 +30,6 @@ body {
     50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-
 
 .theform {
     width: 40%;
