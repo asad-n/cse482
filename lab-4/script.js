@@ -1,11 +1,11 @@
-const fullname = document.querySelector(`#fullname`),
-      username = document.querySelector(`#username`),
-      password = document.querySelector(`#password`),
-      repass   = document.querySelector(`#repass`),
-      gender   = document.querySelector(`#gender`),
-      mobile   = document.querySelector(`#contact`),
-      email    = document.querySelector(`#email`),
-      btn      = document.querySelector(`#btn-submit`)
+const fullname = document.getElementById(`fullname`),
+      username = document.getElementById(`username`),
+      password = document.getElementById(`password`),
+      repass   = document.getElementById(`repass`),
+      gender   = document.getElementById(`gender`),
+      mobile   = document.getElementById(`contact`),
+      email    = document.getElementById(`email`),
+      btn      = document.getElementById(`btn-submit`)
       fullname_regexp = /^[a-z .'-]+$/i,
       username_regexp = /^[\S]+$/,
       password_regexp = /^\S{8,32}$/,
@@ -13,12 +13,16 @@ const fullname = document.querySelector(`#fullname`),
       email_regexp    = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 
 function indicator_status(element, pattern) {
-    if(element.value.match(pattern)) {
-	element.previousElementSibling.classList.remove(`block__indicator--red`)
-	element.previousElementSibling.classList.add(`block__indicator--green`)
+    if(!element.hasAttribute(`required`) && element.value.trim().length == 0) {
+	element.previousElementSibling.className = `block__indicator`
     } else {
-	element.previousElementSibling.classList.remove(`block__indicator--green`)
-	element.previousElementSibling.classList.add(`block__indicator--red`)
+	if(element.value.match(pattern)) {
+	    element.previousElementSibling.classList.remove(`block__indicator--red`)
+	    element.previousElementSibling.classList.add(`block__indicator--green`)
+	} else {
+	    element.previousElementSibling.classList.remove(`block__indicator--green`)
+	    element.previousElementSibling.classList.add(`block__indicator--red`)
+	}
     }
 }
 
@@ -32,7 +36,7 @@ function repass_check(pass1, pass2) {
     }
 }
 
-;[fullname, username, password, repass].forEach(elem => {
+;[fullname, username, password, repass, mobile, email].forEach(elem => {
     elem.addEventListener(`keyup`, (evt) => {
 	switch(evt.target.id) {
 	    case `fullname`:
@@ -48,12 +52,19 @@ function repass_check(pass1, pass2) {
 		return
 
 	    case `repass`:
-		repass_check(password.value, repass.value)
+		repass_check(password.value.trim(), repass.value.trim())
+		return
+
+	    case `contact`:
+		indicator_status(evt.target, mobile_regexp)
+		return
+
+	    case `email`:
+		indicator_status(evt.target, email_regexp)
 		return
 	}
     })
 })
-
 
 btn.addEventListener(`click`, (evt) => {
     evt.preventDefault()
@@ -80,11 +91,11 @@ btn.addEventListener(`click`, (evt) => {
 	error = true
     }
 
-    if(!mobile.value.trim().match(mobile_regexp))
+    if(mobile.value.trim().length != 0 && !mobile.value.trim().match(mobile_regexp))
 	display_error(mobile, `Accepeted format: 01XXXXXXXXX`)
 
-    if(!email.value.trim().match(email_regexp))
-	display_error(email, `Please enter a valid email address`)
+    if(email.value.trim().length != 0 && !email.value.trim().match(email_regexp))
+	display_error(email, `Please enter a valid email address: someone@somewhere.xyz`)
 
     if (!error)
 	alert(`Good boy`)
