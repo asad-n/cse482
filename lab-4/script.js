@@ -91,11 +91,15 @@ btn.addEventListener(`click`, (evt) => {
 	error = true
     }
 
-    if(mobile.value.trim().length != 0 && !mobile.value.trim().match(mobile_regexp))
+    if(mobile.value.trim().length != 0 && !mobile.value.trim().match(mobile_regexp)) {
+	error = true
 	display_error(mobile, `Accepeted format: 01XXXXXXXXX`)
+    }
 
-    if(email.value.trim().length != 0 && !email.value.trim().match(email_regexp))
+    if(email.value.trim().length != 0 && !email.value.trim().match(email_regexp)) {
+	error = true
 	display_error(email, `Please enter a valid email address: someone@somewhere.xyz`)
+    }
 
     if (!error)
 	alert(`Good boy`)
