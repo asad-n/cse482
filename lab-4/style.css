@@ -48,12 +48,18 @@ body {
 }
 
 .theform > h3 {
-    color: #999;
+    color: var(--input-colour);
     text-align: center;
     font-size: 2rem;
     font-weight: 900;
     margin-bottom: 2em;
     position: relative;
+    text-shadow:
+        0 0 5px var(--text-colour),
+	0 0 10px var(--text-colour),
+	0 0 20px var(--text-colour),
+	0 0 40px var(--label-colour),
+	0 0 80px var(--label-colour);
 }
 
 .theform > h3::after {
@@ -122,9 +128,7 @@ body {
     bottom: -1.4em;
     transform: translateX(-50%);
     font-size: 0.90em;
-    /* font-weight: 700; */
-    /* color: rgb(200,50,100); */
-    color: #E11584;
+    color: rgb(225,21,132);
 }
 
 .block > label {
